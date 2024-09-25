@@ -1,5 +1,5 @@
 export const materials = [
-    [1, 'Rocks', 10, 'Rocks.png'],
+    [1, 'Rocks', 100, 'Rocks.png'],
     [2, 'Metal Scrap', 160, 'MetalScrap.png'],
     [3, 'Aluminum', 180, 'Aluminum.png'],
     [4, 'Iron', 180, 'Iron.png'],
