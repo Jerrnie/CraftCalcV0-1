@@ -31,31 +31,93 @@ body {
   font-size: 1.5rem;
 }
 
-#user-input {
-  padding: 1rem;
-  max-width: 80rem;
+/* Result Section */
+#result {
+  max-width: 80rem; /* Increased max width of the table */
   margin: 2rem auto;
-  border-radius: 4px;
-  background: linear-gradient(180deg, #307e6c, #2b996d);
+  padding: 1rem;
+  table-layout: fixed; /* Maintain fixed layout for consistency */
+  border-spacing: 0; /* Remove border spacing for tighter layout */
+  text-align: right;
+  background-color: rgba(48, 59, 55, 0.8); /* Optional: Add slight background for contrast */
+  border-radius: 8px; /* Optional: Rounded corners for a softer look */
 }
+
+/* Table Styles */
+.table {
+  width: 100%;
+  border-collapse: collapse; /* Ensures no gaps between borders */
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd; /* Consistent border for all cells */
+  padding: 12px; /* Increased padding for better spacing */
+}
+
+/* Header Styles */
+.table th {
+  text-align: left; /* Align header text to the left */
+  font-size: 0.9rem; /* Slightly larger font size for headers */
+  color: #83e6c0; /* Consistent color for header */
+}
+
+/* Body Styles */
+#result tbody {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 0.9rem; /* Adjusted font size for better readability */
+  color: #c2e9e0; /* Body text color */
+}
+
+/* Footer Styles */
+.table tfoot td {
+  text-align: right; /* Right-align footer text */
+}
+
+/* Additional Price Section */
+.additional-price {
+  margin-top: 20px; /* Space above additional price section */
+}
+
+.additional-price input {
+  padding: 0.5rem; /* Increased padding for the input */
+  width: 120px; /* Slightly wider input for better usability */
+  border: 1px solid #76c0ae; /* Consistent border style */
+  border-radius: 0.25rem; /* Rounded corners for input */
+  background-color: transparent; /* Keep the background consistent */
+  color: #c2e9e0; /* Input text color */
+}
+
+/* Total Price Section */
+.total-price {
+  margin-top: 10px; /* Space above total price section */
+  font-size: 1rem; /* Ensure total price is readable */
+  color: #e1eeeb; /* Optional: Color to make total price stand out */
+}
+
+/* Centering Class */
+.center {
+  text-align: center; /* Center text alignment */
+}
+
+
 
 .input-group {
   display: flex;
-  justify-content: space-evenly;
-  gap: 1.5rem;
+  align-items: center; /* Center the items vertically */
+  gap: 1rem;
 }
 
-#user-input label {
-  display: block;
-  margin-bottom: 0.50rem;
-  font-family: 'Roboto Condensed', sans-serif;
-  font-size: 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
+.input-group label {
+  white-space: nowrap; /* Prevent label text from wrapping */
 }
 
-#user-input input {
-  width: 100%;
+.input-group sup {
+  color: salmon;
+}
+
+.user-input-field {
+  width: 60px; /* Adjust width as needed for better alignment */
   padding: 0.5rem;
   border: 1px solid #76c0ae;
   border-radius: 0.25rem;
@@ -64,26 +126,65 @@ body {
   font-size: 1rem;
 }
 
-#result {
-  max-width: 50rem;
-  margin: 2rem auto;
+#user-input {
   padding: 1rem;
-  table-layout: fixed;
-  border-spacing: 1rem;
-  text-align: right;
+  max-width: 90rem;
+  margin: 2rem auto;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #307e6c, #2b996d);
 }
 
-#result thead {
-  font-size: 0.7rem;
-  color: #83e6c0;
-}
-
-#result tbody {
+#user-input label {
+  display: block;
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 0.85rem;
-  color: #c2e9e0;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
-.center {
-  text-align: center;
+#user-input input {
+  width: 8.5rem;
+  padding: 0.5rem;
+  border: 1px solid #76c0ae;
+  border-radius: 0.25rem;
+  background-color: transparent;
+  color: #c2e9e0;
+  font-size: 1rem;
+}
+
+/* Custom Scroll Bar */
+::-webkit-scrollbar {
+  width: 8px; /* Width of the scroll bar */
+  height: 8px; /* Height of the scroll bar for horizontal scrolling */
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(48, 59, 55, 0.8); /* Background of the scroll track */
+  border-radius: 10px; /* Rounded corners for the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #76c0ae; /* Color of the scroll thumb */
+  border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #83e6c0; /* Color of the thumb on hover */
+}
+
+::-webkit-scrollbar-corner {
+  background: rgba(48, 59, 55, 0.8); /* Color of the corner where the scroll bars meet */
+}
+
+/* Firefox Scrollbar Styles */
+* {
+  scrollbar-width: thin; /* Makes the scrollbar thin */
+  scrollbar-color: #76c0ae rgba(48, 59, 55, 0.8); /* Scrollbar color and track color */
+}
+
+/* For Edge */
+@supports (-ms-overflow-style: scrollbar) {
+  #result {
+    -ms-overflow-style: -ms-autohiding-scrollbar; /* Auto-hiding scrollbars for Edge */
+  }
 }

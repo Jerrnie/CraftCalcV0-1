@@ -13,14 +13,24 @@ export default function UserInput({ id, name, price, img, handleChange }) {
     }
 
     return (
-        <div>
-            <img src={`./${img}`} alt={`logo`} style={{ width: '35px', height: '35px', marginRight: '10px', marginTop: '10px' }} />
-            <label htmlFor={id}>{name} <sup style={{ color: 'salmon' }}>x {price}</sup> </label>
-            <input
-                type="number"
-                id={id}
-                onChange={handleInternalChange}
-            />
+        <div id="user-input">
+            <div className="input-group">
+                <img
+                    src={`./${img}`}
+                    style={{ width: "30px", height: "30px" }}
+                    alt={`${name} logo`}
+                    className="user-input-img"
+                />
+                <label htmlFor={id}>
+                    {name} <sup> x {price}</sup>
+                </label>
+                <input
+                    type="number"
+                    id={id}
+                    onChange={handleInternalChange}
+                    className="user-input-field"
+                />
+            </div>
         </div>
     );
 }
