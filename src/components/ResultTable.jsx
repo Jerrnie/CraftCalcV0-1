@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
 
+
+const formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 0,
+});
+
 const Result = ({ cart }) => {
   // State for the additional price input
   const [additionalPrice, setAdditionalPrice] = useState(0);
@@ -34,16 +42,16 @@ const Result = ({ cart }) => {
               {Object.entries(cart).map(([id, { name, price, quantity }]) => (
                 <tr key={id}>
                   <td style={{ border: '1px solid #ddd', padding: '8px' }}>{name}</td>
-                  <td style={{ border: '1px solid #ddd', padding: '8px' }}>${price.toFixed(2)}</td>
+                  <td style={{ border: '1px solid #ddd', padding: '8px' }}>{formatter.format(price)}</td>
                   <td style={{ border: '1px solid #ddd', padding: '8px' }}>{quantity}</td>
-                  <td style={{ border: '1px solid #ddd', padding: '8px' }}>${(price * quantity).toFixed(2)}</td>
+                  <td style={{ border: '1px solid #ddd', padding: '8px' }}>{formatter.format((price * quantity))}</td>
                 </tr>
               ))}
             </tbody>
             <tfoot>
               <tr>
                 <td colSpan="3" style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'right' }}>Total</td>
-                <td style={{ border: '1px solid #ddd', padding: '8px' }}>${totalPrice.toFixed(2)}</td>
+                <td style={{ border: '1px solid #ddd', padding: '8px' }}>{formatter.format(totalPrice)}</td>
               </tr>
             </tfoot>
           </table>
@@ -58,7 +66,7 @@ const Result = ({ cart }) => {
               onChange={(e) => setAdditionalPrice(Number(e.target.value))}
               style={{ marginLeft: '10px', padding: '5px', width: '100px' }}
             />
-            <p>Total with Additional Price: ${totalWithAdditional.toFixed(2)}</p>
+            <p>Total with Additional Price: {formatter.format(totalWithAdditional)}</p>
           </div>
         </div>
       )}
