@@ -1,0 +1,45 @@
+# Node modules
+node_modules/
+
+# Build output
+build/
+dist/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Cache
+.cache/
+.pnp.*
+!.pnp.js
+
+# IDE specific files
+.idea/
+.vscode/
+.DS_Store
+*.swp
+*.swo
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Ignore testing coverage
+coverage/
+
+# Miscellaneous
+*.tgz
+*.gz
+*.zip
+
+# Temporary files
+tmp/
+temp/
